@@ -7,7 +7,7 @@ import { SignedIn, SignedOut, UserButton } from '@clerk/nextjs';
 import { Container, Typography, AppBar, Toolbar, Button, Box, Grid } from '@mui/material';
 export default function Home() {
   return (
-    <Container maxWidth='100px'>
+    <Container maxWidth='100vw'>
       <Head>
         <title>Flashcard SaaS</title>
         <meta name= "description" content='Create flashcard from your text' />
