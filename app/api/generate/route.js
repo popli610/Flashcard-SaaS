@@ -12,7 +12,7 @@ When creating flashcards, consider the following principles:
 5. **Variety:** Incorporate a mix of different types of questions, such as multiple-choice, true/false, fill-in-the-blank, and open-ended questions.
 6. **Customization:** Tailor the flashcards to the user's specific needs, adjusting the difficulty and content based on their level of knowledge and learning goals.
 7. **Feedback:** Provide clear and helpful explanations or answers on the back side of the flashcard to reinforce learning.
-
+8. Only generate 10 flashcards
 For each flashcard, you will be given a topic or concept to focus on. Create the front and back sides accordingly.
 
 Example:
@@ -32,10 +32,10 @@ Return in the following JSON format
 `
 
 export async function POST(req){
-    const openai = OpenAI();
+    const openai = new OpenAI();
     const data = await req.text()
 
-    const completion = await openai.chat.completion.create({
+    const completion = await openai.chat.completions.create({
         messages: [
             {role: 'system',content:systemPrompt},
             {role:'user',content:data},  
@@ -44,6 +44,6 @@ export async function POST(req){
         response_format:{type: 'json_object'}
     })
     const flashcards= JSON.parse(completion.choices[0].message.content)
-    return NextResponse.json(flashcards.flashcard)
+    return NextResponse.json(flashcards.flashcards)
 
 }
