@@ -42,26 +42,6 @@ export default function Home() {
         <title>Flashcard SaaS</title>
         <meta name="description" content="Create flashcard from your text" />
       </Head>
-
-      <AppBar position="static">
-        <Toolbar>
-          <Typography variant="h6" style={{ flexGrow: 1 }}>
-            Flashcard Saas
-          </Typography>
-          <SignedOut>
-            <Button color="inherit" href="sign-in">
-              Login
-            </Button>
-            <Button color="inherit" href="sign-up">
-              Sign Up
-            </Button>
-          </SignedOut>
-          <SignedIn>
-            <UserButton />
-          </SignedIn>
-        </Toolbar>
-      </AppBar>
-
       <Box
         sx={{
           textAlign: "center",
