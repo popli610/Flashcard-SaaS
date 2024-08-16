@@ -1,29 +1,145 @@
-import { SignedIn, SignedOut, UserButton } from '@clerk/nextjs';
-import { AppBar, Button, Toolbar, Typography } from '@mui/material';
-import React from 'react'
+'use client'
+import { SignedIn, SignedOut, UserButton } from "@clerk/nextjs";
+import { AppBar, Button, Toolbar, Typography, Box } from "@mui/material";
+import React, { useState } from "react";
+import PremiumUpgradeModal from "../upgrade/page";
 
 const Navbar = () => {
+    const [openUpgradeModal, setOpenUpgradeModal] = useState(false);
+
+    const handleOpenUpgrade = () => {
+      setOpenUpgradeModal(true);
+    };
+
+    const handleCloseUpgrade = () => {
+      setOpenUpgradeModal(false);
+    };
+
   return (
-    <AppBar position="static">
-      <Toolbar>
-        <Typography variant="h6" style={{ flexGrow: 1 }}>
-          Flashcard Saas
-        </Typography>
-        <SignedOut>
-          <Button color="inherit" href="sign-in">
-            Login
-          </Button>
-          <Button color="inherit" href="sign-up">
-            Sign Up
-          </Button>
-        </SignedOut>
-        <SignedIn>
-          <UserButton />
-        </SignedIn>
-      </Toolbar>
-    </AppBar>
+    <>
+      <AppBar
+        position="static"
+        sx={{
+          backgroundColor: "#FBE5D5", // A slightly darker pastel background
+          boxShadow: "none", // Remove default shadow
+          padding: "12px 24px", // Add padding for better spacing
+        }}
+      >
+        <Toolbar
+          sx={{
+            display: "flex",
+            justifyContent: "space-between",
+            alignItems: "center",
+          }}
+        >
+          {/* Brand/Logo */}
+          <Typography
+            variant="h5"
+            sx={{
+              fontWeight: 700,
+              color: "#5D4C46", // Darker text color for contrast
+              letterSpacing: "1px",
+            }}
+          >
+            InsightInk
+          </Typography>
+
+          {/* Links and User Options */}
+          <Box sx={{ display: "flex", alignItems: "center" }}>
+            <SignedOut>
+              <Button
+                href="sign-in"
+                sx={{
+                  color: "#5D4C46", // Consistent dark text color
+                  marginRight: 2,
+                  fontWeight: 500,
+                  textTransform: "none",
+                  borderRadius: "25px", // More rounded corners for a softer feel
+                  padding: "8px 20px",
+                  backgroundColor: "#FFD3B6", // Soft pastel background for button
+                  ":hover": {
+                    backgroundColor: "#FFB490", // Darker pastel orange on hover
+                    color: "#FFF", // White text on hover for contrast
+                  },
+                }}
+              >
+                Login
+              </Button>
+              <Button
+                href="sign-up"
+                sx={{
+                  color: "#FFF",
+                  backgroundColor: "#FF8B60", // Matching button background color
+                  padding: "8px 20px", // Larger padding for a more premium look
+                  borderRadius: "25px", // More rounded corners
+                  fontWeight: 500,
+                  textTransform: "none",
+                  ":hover": {
+                    backgroundColor: "#FF6F61", // Slightly darker hover effect
+                  },
+                }}
+              >
+                Sign Up
+              </Button>
+            </SignedOut>
+            <SignedIn>
+              <Button
+                href="/flashcards"
+                sx={{
+                  color: "#FFF",
+                  background: "linear-gradient(135deg, #FF8B60, #FF6F61)", // Gradient for a modern touch
+                  marginRight: 2,
+                  padding: "8px 20px", // Larger padding
+                  borderRadius: "25px", // Rounded corners
+                  // border: "#FF4F41",
+                  fontWeight: 600,
+                  textTransform: "none",
+                  boxShadow: "0 4px 12px rgba(0, 0, 0, 0.2)", // More defined shadow for depth
+                  ":hover": {
+                    backgroundColor: "#FF4F41", // Stronger hover effect
+                  },
+                }}
+              >
+                My Collection
+              </Button>
+              <Button
+                onClick={handleOpenUpgrade}
+                sx={{
+                  color: "#FFF",
+                  background: "linear-gradient(135deg, #FF8B60, #FF6F61)", // Gradient for a modern touch
+                  marginRight: 2,
+                  padding: "8px 20px", // Larger padding
+                  borderRadius: "25px", // Rounded corners
+                  fontWeight: 600,
+                  textTransform: "none",
+                  boxShadow: "0 4px 12px rgba(0, 0, 0, 0.2)", // More defined shadow for depth
+                  ":hover": {
+                    backgroundColor: "#FF4F41", // Stronger hover effect
+                  },
+                }}
+              >
+                Upgrade to Premium ✨
+              </Button>
+              <UserButton
+                sx={{
+                  marginLeft: 2,
+                  padding: "4px", // Adding padding to UserButton for consistency
+                  borderRadius: "50%",
+                  ":hover": {
+                    backgroundColor: "#FFD3B6", // Hover effect for user button
+                  },
+                }}
+              />
+            </SignedIn>
+          </Box>
+        </Toolbar>
+      </AppBar>
+      <PremiumUpgradeModal
+        open={openUpgradeModal}
+        handleClose={handleCloseUpgrade}
+      />
+    </>
   );
-}
+};
 
-export default Navbar
-
+export default Navbar;

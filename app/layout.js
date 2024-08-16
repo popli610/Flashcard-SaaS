@@ -1,9 +1,13 @@
-import { Inter } from "next/font/google";
+import { Inter, Recursive, Poppins } from "next/font/google";
 import "./globals.css";
 import { ClerkProvider } from "@clerk/nextjs";
 
+const recursive = Inter({
+  subsets: ["latin"],
+  display: "swap",
+});
+
 import Navbar from "./navbar/page";
-const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
   title: "Create Next App",
@@ -14,7 +18,7 @@ export default function RootLayout({ children }) {
   return (
     <ClerkProvider>
       <html lang="en">
-        <body className={inter.className}>
+        <body>
           <Navbar />
           {children}
         </body>
