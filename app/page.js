@@ -134,7 +134,7 @@ export default function Home() {
                 alignItems: "center",
               }}
             >
-              <Typography variant="body2" sx={{ color: "#5D4C46", mb: 2 }}>
+              {/* <Typography variant="body2" sx={{ color: "#5D4C46", mb: 2 }}>
                 Supported Files:{" "}
                 <img
                   src="/icons/pdf-icon.png"
@@ -150,7 +150,7 @@ export default function Home() {
               </Typography>
               <Typography variant="body2" sx={{ color: "#5D4C46", mb: 2 }}>
                 or try
-              </Typography>
+              </Typography> */}
             </Grid>
           </Grid>
         </Container>
@@ -468,6 +468,8 @@ export default function Home() {
           py: 4,
         }}
       >
+        {/* pricing  */}
+
         <Container>
           <Typography
             variant="h3"
@@ -537,11 +539,42 @@ export default function Home() {
             <Grid item xs={12} md={4}>
               <Card
                 raised
-                sx={{ borderRadius: 3, boxShadow: 3, bgcolor: "#FFFFFF" }}
+                sx={{
+                  borderRadius: 3,
+                  boxShadow: "0 4px 20px rgba(0, 0, 0, 0.2)",
+                  bgcolor: "#FFFFFF",
+                  background: "linear-gradient(135deg, #FFF7E3, #FFE8C5)",
+                  position: "relative",
+                }}
               >
                 <CardContent
-                  sx={{ textAlign: "center", py: 4, borderRadius: 3 }}
+                  sx={{
+                    textAlign: "center",
+                    py: 4,
+                    borderRadius: 3,
+                    position: "relative",
+                  }}
                 >
+                  <Box
+                    sx={{
+                      position: "absolute",
+                      top: -20,
+                      right: -20,
+                      bgcolor: "#F35A4A",
+                      color: "#FFF",
+                      borderRadius: "50%",
+                      width: 80,
+                      height: 80,
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      fontWeight: "bold",
+                      fontSize: "0.8rem",
+                      pr:1.5,
+                    }}
+                  >
+                    Best Value
+                  </Box>
                   <Typography
                     variant="h6"
                     component="div"
