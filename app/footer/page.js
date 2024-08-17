@@ -50,20 +50,20 @@ const Footer = () => {
                 Sign In
               </Link>
               <Link
-                href="/upgrade"
+                href="/sign-up"
                 color="inherit"
                 underline="none"
                 sx={{ display: "block", mb: 1 }}
               >
-                Upgrade
+                Sign Up
               </Link>
               <Link
-                href="/flashcards"
+                href="/generate"
                 color="inherit"
                 underline="none"
                 sx={{ display: "block", mb: 1 }}
               >
-                Flashcards
+                Generate Flashcard
               </Link>
             </Grid>
 

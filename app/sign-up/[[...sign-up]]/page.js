@@ -2,17 +2,12 @@
 
 /** @jsxImportSource @emotion/react */
 "use client";
-import {
-  Container,
-  Typography,
-  Box,
-} from "@mui/material";
+import { Container, Typography, Box } from "@mui/material";
 import Link from "next/link";
-import { SignUp } from "@clerk/nextjs";
+import { SignIn, SignUp } from "@clerk/nextjs";
 import { css, keyframes } from "@emotion/react";
 
 // Define the keyframes for the animations
-
 
 const pulse = keyframes`
   0% {
@@ -29,7 +24,6 @@ const pulse = keyframes`
   }
 `;
 
-
 export default function SignUpPage() {
   return (
     <Container maxWidth="100vw" disableGutters>
@@ -42,9 +36,10 @@ export default function SignUpPage() {
           minHeight: "100vh",
           background: "linear-gradient(45deg, #FF6F61, #FFB74D, #FF8A65)",
           background: "linear-gradient(135deg, #FFFFFF, #FBCEB1)",
-          padding: 15,
+          px: 15,
           position: "relative",
           overflow: "hidden",
+          pb: 12,
         }}
       >
         {/* Background SVG */}
@@ -84,7 +79,6 @@ export default function SignUpPage() {
             flexDirection: "column",
             alignItems: "flex-start",
             justifyContent: "center",
-            // marginLeft: 5,
             paddingRight: 3,
           }}
         >
@@ -97,7 +91,11 @@ export default function SignUpPage() {
           >
             Welcome To Insight<span style={{ color: "#FF8B60" }}>Ink</span>
           </Typography>
-          <Typography variant="h6" gutterBottom sx={{ color: "#5D4C46" }}>
+          <Typography
+            variant="h6"
+            gutterBottom
+            sx={{ mt: 3, pr: 20, color: "#5D4C46" }}
+          >
             Instantly turn your PDFs, Documents, Txt files, Notes into
             flashcards with InsightInk. Our AI quickly generates a complete set
             of flashcards in just seconds.{" "}

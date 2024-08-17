@@ -29,14 +29,12 @@ export default function FlashCards() {
       const docSnap = await getDoc(docRef);
       if (docSnap.exists()) {
         const collections = docSnap.data().flashcards || [];
-        // console.log(collections);
-        console.log(collections);
         setFlashcards(collections);
       } else {
         await setDoc(docRef, { flashcards: [] });
       }
-      console.log(flashcards);
     }
+
     getFlashcards();
   }, [user]);
 
@@ -84,7 +82,7 @@ export default function FlashCards() {
           container
           sx={{
             width: "100%",
-            minHeight:"50vh",
+            minHeight: "50vh",
             mt: 4,
             justifyContent: "center",
           }}
@@ -133,11 +131,7 @@ export default function FlashCards() {
                         alignItems="center"
                         sx={{ gap: 2 }}
                       >
-                        <Typography
-                          variant="h6"
-                        >
-                          {flashcard.name}
-                        </Typography>
+                        <Typography variant="h6">{flashcard.name}</Typography>
                         <LaunchIcon />
                       </Box>
                     </CardContent>

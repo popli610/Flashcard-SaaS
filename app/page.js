@@ -58,10 +58,9 @@ export default function Home() {
           p: 4,
         }}
       >
-
         <Container maxWidth="lg" sx={{ zIndex: 1, mt: 4 }}>
           <Grid container spacing={4}>
-            <Grid item xs={12} md={6}>
+            <Grid item xs={12} md={6} sx={{mt:4}}>
               <Typography
                 variant="h3"
                 gutterBottom
@@ -79,15 +78,15 @@ export default function Home() {
                   variant="contained"
                   sx={{
                     mt: 2,
-                    color: "#FFF", // White text for contrast
-                    background: "linear-gradient(135deg, #FF8B60, #FF6F61)", // Matching gradient
-                    padding: "10px 24px", // Larger padding for a premium feel
-                    borderRadius: "25px", // Rounded corners for a smooth look
-                    textTransform: "none", // No text transformation for a softer look
-                    boxShadow: "0 4px 12px rgba(0, 0, 0, 0.2)", // Shadow for depth
-                    transition: "all 0.3s ease-in-out", // Smooth transitions
+                    color: "#FFF",
+                    background: "linear-gradient(135deg, #FF8B60, #FF6F61)",
+                    padding: "10px 24px",
+                    borderRadius: "25px",
+                    textTransform: "none",
+                    boxShadow: "0 4px 12px rgba(0, 0, 0, 0.2)",
+                    transition: "all 0.3s ease-in-out",
                     ":hover": {
-                      backgroundColor: "#FF4F41", // Stronger hover effect to match the theme
+                      backgroundColor: "#FF4F41",
                     },
                   }}
                 >
@@ -105,23 +104,26 @@ export default function Home() {
                 alignItems: "center",
               }}
             >
-              {/* <Typography variant="body2" sx={{ color: "#5D4C46", mb: 2 }}>
-                Supported Files:{" "}
-                <img
-                  src="/icons/pdf-icon.png"
-                  alt="PDF"
-                  style={{ marginRight: 8 }}
+              <Box
+                sx={{
+                  width: "100%",
+                  maxWidth: "500px", // Limits the size of the video
+                  borderRadius: "30px", // Curved corners for the video
+                  overflow: "hidden", // Ensures the video respects the rounded corners
+                  boxShadow: "0 40px 40px rgba(0, 0, 0, 0.4)",
+                  border: "3px solid #FBCEB1", // Adds depth with a shadow
+                  mb: 20,
+                  ml: { xs: 0, md: 20 },
+                }}
+              >
+                <video
+                  src="demo1.mp4"
+                  autoPlay
+                  loop
+                  muted
+                  style={{ width: "100%", display: "block" }} // Ensures the video fills the container
                 />
-                <img
-                  src="/icons/ppt-icon.png"
-                  alt="PPT"
-                  style={{ marginRight: 8 }}
-                />
-                <img src="/icons/doc-icon.png" alt="DOC" />
-              </Typography>
-              <Typography variant="body2" sx={{ color: "#5D4C46", mb: 2 }}>
-                or try
-              </Typography> */}
+              </Box>
             </Grid>
           </Grid>
         </Container>
