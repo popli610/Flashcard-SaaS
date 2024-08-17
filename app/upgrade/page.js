@@ -12,13 +12,29 @@ import {
   Card,
   CardContent,
 } from "@mui/material";
+import getStripe from "@/utils/get-stripe";
 
 export default function PremiumUpgradeModal({ open, handleClose }) {
-  const [selectedPlan, setSelectedPlan] = useState("yearly");
+  const [selectedPlan, setSelectedPlan] = useState("annual");
 
   const handlePlanSelect = (plan) => {
     setSelectedPlan(plan);
   };
+  const handlePayment = async () => {
+    const response = await fetch("/api/checkout_session", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ plan: selectedPlan }),
+    });
+    const session = await response.json();
+    if (session.id) {
+      const stripe = await getStripe();
+      await stripe.redirectToCheckout({ sessionId: session.id });
+    }
+  };
+
 
   return (
     <Dialog
@@ -65,19 +81,19 @@ export default function PremiumUpgradeModal({ open, handleClose }) {
         <Grid container spacing={2} justifyContent="center">
           <Grid item xs={12} md={6}>
             <Card
-              onClick={() => handlePlanSelect("yearly")}
+              onClick={() => handlePlanSelect("annual")}
               sx={{
                 backgroundColor:
-                  selectedPlan === "yearly" ? "#FFD3B6" : "transparent", // Background for selected plan
+                  selectedPlan === "annual" ? "#FFD3B6" : "transparent", // Background for selected plan
                 borderRadius: "12px", // Soft rounding
                 textAlign: "center",
                 padding: "12px", // Smaller padding inside card
                 cursor: "pointer",
                 border:
-                  selectedPlan === "yearly" ? "none" : "2px solid #FFD3B6",
+                  selectedPlan === "annual" ? "none" : "2px solid #FFD3B6",
                 "&:hover": {
                   border:
-                    selectedPlan === "yearly" ? "none" : "2px solid #FFAD90", // Hover effect
+                    selectedPlan === "annual" ? "none" : "2px solid #FFAD90", // Hover effect
                 },
               }}
             >
@@ -170,17 +186,6 @@ export default function PremiumUpgradeModal({ open, handleClose }) {
           >
             Upgrade to Premium and Get Access to
           </Typography>
-          {/* <Typography
-            variant="body2"
-            sx={{
-              color: "#5D4C46",
-              textAlign: "center",
-              fontSize: "0.9rem",
-              mb: 1,
-            }}
-          >
-            Get access to all of InsightInk’s features:
-          </Typography> */}
           <ul style={{ padding: 0, listStyleType: "none", margin: 0 }}>
             {" "}
             {/* Remove padding and margin */}
@@ -222,9 +227,9 @@ export default function PremiumUpgradeModal({ open, handleClose }) {
 
       <DialogActions sx={{ justifyContent: "center", padding: "8px" }}>
         {" "}
-        {/* Reduced padding for dialog actions */}
         <Button
           variant="contained"
+          onClick={handlePayment}
           sx={{
             backgroundColor: "#FFD3B6", // Soft orange for consistency
             color: "#5D4C46",

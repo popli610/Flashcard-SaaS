@@ -73,7 +73,7 @@ const Footer = () => {
                 Follow Us
               </Typography>
               <Link
-                href="#"
+                href="/"
                 color="inherit"
                 underline="none"
                 sx={{ display: "inline-block", mr: 2 }}
