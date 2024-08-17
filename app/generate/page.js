@@ -477,13 +477,13 @@ export default function Generate() {
                     background: "linear-gradient(135deg, #FF8B60, #FF6F61)", // Matching gradient
                     padding: "10px 24px", // Larger padding for a premium feel
                     borderRadius: "25px", // Rounded corners for a smooth look
-                    fontWeight: 600, // Bold font for emphasis
                     textTransform: "none", // No text transformation for a softer look
                     boxShadow: "0 4px 12px rgba(0, 0, 0, 0.2)", // Shadow for depth
                     transition: "all 0.3s ease-in-out", // Smooth transitions
                     ":hover": {
                       backgroundColor: "#FF4F41", // Stronger hover effect to match the theme
                     },
+                    mb:2,
                   }}
                 >
                   Save Flashcards

@@ -35,9 +35,13 @@ const Navbar = () => {
           }}
         >
           {/* Brand/Logo */}
+
           <Typography
             variant="h5"
             sx={{
+              display:"flex",
+              justifyContent:"center",
+              alignItems:"center",
               fontFamily: "'Poppins', sans-serif", // Applying Poppins font here
               fontWeight: 700,
               color: "#5D4C46", // Darker text color for contrast
@@ -45,12 +49,12 @@ const Navbar = () => {
             }}
           >
             <Image
-              src="/logo2.webp"
+              src="/logo3.webp"
               width={70}
               height={60}
               style={{ marginRight: "10px" }}
             />
-            <span style={{ color: "#5D4C46" }}>Insight</span>
+            Insight
             <span style={{ color: "#FF8B60" }}>Ink</span>
           </Typography>
 

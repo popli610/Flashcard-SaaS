@@ -58,35 +58,6 @@ export default function Home() {
           p: 4,
         }}
       >
-        {/* <AppBar
-          position="absolute"
-          sx={{ bgcolor: "transparent", boxShadow: "none" }}
-        >
-          <Toolbar sx={{ display: "flex", justifyContent: "space-between" }}>
-            <Typography
-              variant="h6"
-              sx={{ color: "#5D4C46", fontWeight: "bold" }}
-            >
-              InsightInk
-            </Typography>
-            <Box>
-              <Button
-                color="inherit"
-                href="/sign-in"
-                sx={{ color: "#5D4C46", mr: 2 }}
-              >
-                Login
-              </Button>
-              <Button
-                variant="contained"
-                href="/sign-up"
-                sx={{ bgcolor: "#FF9656", color: "#FFFFFF" }}
-              >
-                Sign Up
-              </Button>
-            </Box>
-          </Toolbar>
-        </AppBar> */}
 
         <Container maxWidth="lg" sx={{ zIndex: 1, mt: 4 }}>
           <Grid container spacing={4}>
