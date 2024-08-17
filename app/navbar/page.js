@@ -4,6 +4,7 @@ import { AppBar, Button, Toolbar, Typography, Box } from "@mui/material";
 import React, { useState } from "react";
 import PremiumUpgradeModal from "../upgrade/page";
 import Image from "next/image";
+import Link from "next/link";
 
 const Navbar = () => {
   const [openUpgradeModal, setOpenUpgradeModal] = useState(false);
@@ -35,13 +36,12 @@ const Navbar = () => {
           }}
         >
           {/* Brand/Logo */}
-
           <Typography
             variant="h5"
             sx={{
-              display:"flex",
-              justifyContent:"center",
-              alignItems:"center",
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
               fontFamily: "'Poppins', sans-serif", // Applying Poppins font here
               fontWeight: 700,
               color: "#5D4C46", // Darker text color for contrast
@@ -50,14 +50,16 @@ const Navbar = () => {
           >
             <Image
               src="/logo3.webp"
+              alt="logo"
               width={70}
               height={60}
               style={{ marginRight: "10px" }}
             />
-            Insight
-            <span style={{ color: "#FF8B60" }}>Ink</span>
+            <Link href="/" style={{ textDecoration: "none" }}>
+              <span style={{ color: "#5D4C46" }}>Insight</span>
+              <span style={{ color: "#FF8B60" }}>Ink</span>
+            </Link>
           </Typography>
-
           {/* Links and User Options */}
           <Box sx={{ display: "flex", alignItems: "center" }}>
             <SignedOut>
