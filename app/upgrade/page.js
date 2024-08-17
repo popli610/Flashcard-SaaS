@@ -103,7 +103,7 @@ export default function PremiumUpgradeModal({ open, handleClose }) {
                     color: selectedPlan === "yearly" ? "#5D4C46" : "#5D4C46",
                   }}
                 >
-                  $8.00/mo
+                  $3.99/mo
                 </Typography>
               </CardContent>
             </Card>
@@ -149,7 +149,7 @@ export default function PremiumUpgradeModal({ open, handleClose }) {
                     color: selectedPlan === "monthly" ? "#5D4C46" : "#5D4C46",
                   }}
                 >
-                  $19.00/mo
+                  $8.99/mo
                 </Typography>
               </CardContent>
             </Card>

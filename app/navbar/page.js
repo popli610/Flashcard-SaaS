@@ -1,19 +1,20 @@
-'use client'
+"use client";
 import { SignedIn, SignedOut, UserButton } from "@clerk/nextjs";
 import { AppBar, Button, Toolbar, Typography, Box } from "@mui/material";
 import React, { useState } from "react";
 import PremiumUpgradeModal from "../upgrade/page";
+import Image from "next/image";
 
 const Navbar = () => {
-    const [openUpgradeModal, setOpenUpgradeModal] = useState(false);
+  const [openUpgradeModal, setOpenUpgradeModal] = useState(false);
 
-    const handleOpenUpgrade = () => {
-      setOpenUpgradeModal(true);
-    };
+  const handleOpenUpgrade = () => {
+    setOpenUpgradeModal(true);
+  };
 
-    const handleCloseUpgrade = () => {
-      setOpenUpgradeModal(false);
-    };
+  const handleCloseUpgrade = () => {
+    setOpenUpgradeModal(false);
+  };
 
   return (
     <>
@@ -21,8 +22,9 @@ const Navbar = () => {
         position="static"
         sx={{
           backgroundColor: "#FBE5D5", // A slightly darker pastel background
+          background: "linear-gradient(135deg, #FFFFFF, #FBCEB1)",
           boxShadow: "none", // Remove default shadow
-          padding: "12px 24px", // Add padding for better spacing
+          padding: "10px 24px", // Add padding for better spacing
         }}
       >
         <Toolbar
@@ -36,12 +38,20 @@ const Navbar = () => {
           <Typography
             variant="h5"
             sx={{
+              fontFamily: "'Poppins', sans-serif", // Applying Poppins font here
               fontWeight: 700,
               color: "#5D4C46", // Darker text color for contrast
               letterSpacing: "1px",
             }}
           >
-            InsightInk
+            <Image
+              src="/logo2.webp"
+              width={70}
+              height={60}
+              style={{ marginRight: "10px" }}
+            />
+            <span style={{ color: "#5D4C46" }}>Insight</span>
+            <span style={{ color: "#FF8B60" }}>Ink</span>
           </Typography>
 
           {/* Links and User Options */}
