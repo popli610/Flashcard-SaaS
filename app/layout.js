@@ -8,7 +8,6 @@ const recursive = Inter({
 });
 
 import Navbar from "./navbar/page";
-import Footer from './footer/page'
 
 export const metadata = {
   title: "Create Next App",
@@ -22,7 +21,6 @@ export default function RootLayout({ children }) {
         <body>
           <Navbar />
           {children}
-          <Footer/>
         </body>
       </html>
     </ClerkProvider>

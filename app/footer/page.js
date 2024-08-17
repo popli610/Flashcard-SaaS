@@ -16,7 +16,8 @@ const Footer = () => {
             {/* Column 1: Company Info */}
             <Grid item xs={12} md={4}>
               <Typography variant="h6" gutterBottom sx={{ fontWeight: "bold" }}>
-                InsightInk
+                <span style={{ color: "#5D4C46" }}>Insight</span>
+                <span style={{ color: "#FF8B60" }}>Ink</span>
               </Typography>
               <Typography variant="body2" sx={{ color: "#5D4C46", mb: 2 }}>
                 Your go-to platform for AI-powered flashcards and study tools.
@@ -41,14 +42,6 @@ const Footer = () => {
                 Home
               </Link>
               <Link
-                href="/flashcards"
-                color="inherit"
-                underline="none"
-                sx={{ display: "block", mb: 1 }}
-              >
-                Flashcards
-              </Link>
-              <Link
                 href="/sign-in"
                 color="inherit"
                 underline="none"
@@ -64,6 +57,14 @@ const Footer = () => {
               >
                 Upgrade
               </Link>
+              <Link
+                href="/flashcards"
+                color="inherit"
+                underline="none"
+                sx={{ display: "block", mb: 1 }}
+              >
+                Flashcards
+              </Link>
             </Grid>
 
             {/* Column 3: Social Media Links */}
@@ -78,7 +79,7 @@ const Footer = () => {
                 sx={{ display: "inline-block", mr: 2 }}
               >
                 <img
-                  src="/icons/facebook-icon.png"
+                  src="/facebook-icon.png"
                   alt="Facebook"
                   style={{ width: 24, height: 24 }}
                 />
@@ -90,7 +91,7 @@ const Footer = () => {
                 sx={{ display: "inline-block", mr: 2 }}
               >
                 <img
-                  src="/icons/twitter-icon.png"
+                  src="/twitter-icon.png"
                   alt="Twitter"
                   style={{ width: 24, height: 24 }}
                 />
@@ -102,7 +103,7 @@ const Footer = () => {
                 sx={{ display: "inline-block", mr: 2 }}
               >
                 <img
-                  src="/icons/instagram-icon.png"
+                  src="/instagram-icon.png"
                   alt="Instagram"
                   style={{ width: 24, height: 24 }}
                 />

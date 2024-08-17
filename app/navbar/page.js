@@ -79,7 +79,7 @@ const Navbar = () => {
                 href="sign-up"
                 sx={{
                   color: "#FFF",
-                  backgroundColor: "#FF8B60", // Matching button background color
+                  background: "linear-gradient(135deg, #FF8B60, #FF6F61)", // Matching button background color
                   padding: "8px 20px", // Larger padding for a more premium look
                   borderRadius: "25px", // More rounded corners
                   fontWeight: 500,

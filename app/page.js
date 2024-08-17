@@ -18,6 +18,7 @@ import {
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import Link from "next/link";
+import Footer from "./footer/page";
 
 export default function Home() {
   const handleSubmit = async () => {
@@ -98,7 +99,7 @@ export default function Home() {
                 Flashcards, Powered by AI Brilliance
               </Typography>
               <Typography variant="h6" gutterBottom sx={{ color: "#5D4C46" }}>
-                Instantly turn your PDFs, presentations, notes, and images into
+                Instantly turn your PDFs, Documents, Txt files, Notes into
                 flashcards with InsightInk. Our AI quickly generates a complete
                 set of flashcards in just seconds.{" "}
               </Typography>
@@ -111,7 +112,6 @@ export default function Home() {
                     background: "linear-gradient(135deg, #FF8B60, #FF6F61)", // Matching gradient
                     padding: "10px 24px", // Larger padding for a premium feel
                     borderRadius: "25px", // Rounded corners for a smooth look
-                    fontWeight: 600, // Bold font for emphasis
                     textTransform: "none", // No text transformation for a softer look
                     boxShadow: "0 4px 12px rgba(0, 0, 0, 0.2)", // Shadow for depth
                     transition: "all 0.3s ease-in-out", // Smooth transitions
@@ -570,7 +570,7 @@ export default function Home() {
                       justifyContent: "center",
                       fontWeight: "bold",
                       fontSize: "0.8rem",
-                      pr:1.5,
+                      pr: 1.5,
                     }}
                   >
                     Best Value
@@ -685,6 +685,7 @@ export default function Home() {
           </Grid>
         </Container>
       </Box>
+      <Footer />
     </>
   );
 }
