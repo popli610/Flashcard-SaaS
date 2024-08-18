@@ -344,7 +344,7 @@ export default function Home() {
             AI Flashcard Generator
           </Typography>
           <Typography variant="body1" sx={{ color: "#5D4C46", mb: 6 }}>
-            Getting ready for a test, exam, or quiz? InsightInk’s AI-powered
+            Getting ready for a test, exam, or quiz? InsightInk`&#39;`s AI-powered
             flashcard maker converts your pictures, notes, PDFs, PowerPoints,
             and other documents into flashcards automatically. Just upload your
             materials, and our AI will generate your flashcards in seconds.
