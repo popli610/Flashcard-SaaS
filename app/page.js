@@ -278,7 +278,7 @@ export default function Home() {
               <Typography align="left" sx={{ color: "#5D4C46", mt: 1, mb: 2 }}>
                 Your study materials are always within reach. With our platform,
                 you can access your flashcards from any device, be it your
-                phone, tablet, or computer. Whether you’re online or offline,
+                phone, tablet, or computer. Whether you`&#39;`re online or offline,
                 you can continue studying wherever you are, making it easy to
                 fit learning into your busy schedule.
               </Typography>
