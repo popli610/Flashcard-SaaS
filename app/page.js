@@ -1,10 +1,8 @@
 "use client";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Image from "next/image";
-import Head from "next/head";
-
 import getStripe from "@/utils/get-stripe";
-import { SignedIn, SignedOut, UserButton } from "@clerk/nextjs";
+
 import {
   Container,
   Typography,
@@ -16,13 +14,9 @@ import {
   Card,
   CardContent,
 
-  IconButton,
 } from "@mui/material";
-import MenuIcon from "@mui/icons-material/Menu";
 import Link from "next/link";
 import Footer from "./footer/page";
-
-
 
 export default function Home() {
   const handleSubmit = async () => {
