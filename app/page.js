@@ -476,8 +476,6 @@ export default function Home() {
           py: 4,
         }}
       >
-        {/* pricing  */}
-
         <Container>
       <Typography
         variant="h3"
