@@ -375,7 +375,7 @@ export default function Home() {
                 </Typography>
                 <Typography variant="body2" sx={{ color: "#3D3E42", mt: 1 }}>
                   Enter text, upload a PDF, Doc or Txt, and let our AI make
-                  flashcards for you. It's free with no account required.
+                  flashcards for you. It is free with no account required.
                 </Typography>
               </Box>
             </Grid>
@@ -422,7 +422,7 @@ export default function Home() {
                   Step 3: Test Yourself
                 </Typography>
                 <Typography variant="body2" sx={{ color: "#5D4C46", mt: 1 }}>
-                  Once you've mastered your flashcards, enter exam mode. Test
+                  Once you have mastered your flashcards, enter exam mode. Test
                   your knowledge and scrore well.
                 </Typography>
               </Box>
